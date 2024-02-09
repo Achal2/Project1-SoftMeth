@@ -144,8 +144,8 @@ public class Collection {
 	public void printByRating() {
 		for (int i = 0; i < size - 1; i++) { // Bubble sort by average rating, then title
 			for (int j = 0; j < size - i - 1; j++) {
-				if (albums[j].getAverageRating() < albums[j + 1].getAverageRating() ||
-					(albums[j].getAverageRating() == albums[j + 1].getAverageRating() &&
+				if (albums[j].avgRatings() < albums[j + 1].avgRatings() ||
+					(albums[j].avgRatings() == albums[j + 1].avgRatings() &&
 					albums[j].getTitle().compareTo(albums[j + 1].getTitle()) > 0)) { // Swap albums[j] and albums[j + 1]
 					Album temp = albums[j];
 					albums[j] = albums[j + 1];
