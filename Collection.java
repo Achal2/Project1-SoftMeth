@@ -4,6 +4,7 @@ public class Collection {
 	
 
 	private Album[] albums = new Album[4];
+	private int size;
 	private int numAlbums; // number of albums currently in the collection
 
 	
@@ -140,6 +141,26 @@ public class Collection {
 		}
 	}
 	
+	public void printByRating() {
+		for (int i = 0; i < size - 1; i++) { // Bubble sort by average rating, then title
+			for (int j = 0; j < size - i - 1; j++) {
+				if (albums[j].getAverageRating() < albums[j + 1].getAverageRating() ||
+					(albums[j].getAverageRating() == albums[j + 1].getAverageRating() &&
+					albums[j].getTitle().compareTo(albums[j + 1].getTitle()) > 0)) { // Swap albums[j] and albums[j + 1]
+					Album temp = albums[j];
+					albums[j] = albums[j + 1];
+					albums[j + 1] = temp;
+				}
+			}
+		}
+	
+		System.out.println("*Album collection by rating");
+		for (int k = 0; k < size; k++) {
+			System.out.println(albums[k]);
+			}
+			System.out.print("*End of list");	
+	}
+
 	public boolean isEmpty() {
 		if (numAlbums == 0) {
 			return true;
