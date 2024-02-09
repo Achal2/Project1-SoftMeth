@@ -1,7 +1,7 @@
- public enum Genre {
-        Classical, 
-        Country,
-        Jazz,
-        Pop,
-        Unknown
-    }
+public enum Genre {
+    Classical, 
+    Country,
+    Jazz,
+    Pop,
+    Unknown
+}
