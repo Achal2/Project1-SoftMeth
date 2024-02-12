@@ -1,0 +1,3 @@
+Artists that don't exist
+Artists with wrong/invalid date of births
+Duplicated Artists  
