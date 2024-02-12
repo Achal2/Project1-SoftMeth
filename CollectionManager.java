@@ -59,6 +59,8 @@ public class CollectionManager {
 					break;
 				case "D":
                     break;
+				case "R":
+                    break;
 				case "PD":
 					if (albumList.isEmpty()) {
 						System.out.println("Invalid command."); // TODO
@@ -71,11 +73,18 @@ public class CollectionManager {
 					if (albumList.isEmpty()) {
 						System.out.println("Invalid command."); // TODO
 						break;
-					}
-					
+					}	
 					albumList.printByGenre();
 					break;
 					
+					case "PR":
+                    if (albumList.isEmpty()) {
+                        System.out.println("Invalid command.");
+                        break;
+                    }
+                    albumList.printByRating();
+                    break;
+
 				case "Q":
 					System.out.println("Collection Manager terminated.");
 					System.exit(0);
