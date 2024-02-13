@@ -152,4 +152,19 @@ public int compareTo(Date date) {
 	 return getMonth()+ "/" + getDay() +"/" + getYear();
  }
  
+ public class DateTest {
+    public void main(String[] args) { // Tests the isValid() method
+        
+        Date date1 = new Date("1/1/1900");
+        System.out.println(date1.isValid()); // prints true
+        
+        Date date2 = new Date("2/30/2023");
+        System.out.println(date2.isValid()); // prints false
+        
+        Date date3 = new Date("2/29/2021");
+        System.out.println(date3.isValid()); // prints false
+    }
+}
+
+
 }
