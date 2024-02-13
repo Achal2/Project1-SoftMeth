@@ -1,13 +1,21 @@
 
 
 public class Collection {
-	
 
+
+	/**
+	 * Class representing a collection of albums.
+	 */
 	private Album[] albums = new Album[4];
 	private int size;
 	private int numAlbums; // number of albums currently in the collection
 
-	
+
+	/**
+	 * Finds the index of the given album in the collection.
+	 * @param album The album to find.
+	 * @return he index of the album in the collection, or -1 if not found.
+	 */
 	private int find(Album album) {
 		for (int i = 0; i < albums.length; i++) {
 			if (albums[i] != null) {
@@ -22,6 +30,9 @@ public class Collection {
 	}
 
 
+	/**
+	 * Increases the size of the albums array by 4.
+	 */
 	private void grow() {
 		Album newArray[] = new Album[albums.length + 4];
 
@@ -29,15 +40,25 @@ public class Collection {
 			newArray[i] = albums[i];
 			albums = newArray;
 		}
-	} 
+	}
 
 
-    public boolean contains(Album album){
+	/**
+	 * Checks if the collection contains the specified album.
+ 	 * @param album The album to check for.
+	 * @return true if the album is found in the collection, false otherwise.
+	 */
+	public boolean contains(Album album){
         if (find(album) >= 0)
             return true;
         return false;
     }
 
+	/**
+	 * Adds the specified album to the collection.
+	 * @param album The album to add.
+	 * @return true if the album is successfully added, false otherwise.
+	 */
 	public boolean add(Album album) {
 	
 		
@@ -61,7 +82,12 @@ public class Collection {
 		return false;
 	}
 
-	
+
+	/**
+	 * Removes the specified album from the collection.
+	 * @param album The album to remove.
+	 * @return true if the album is successfully removed, false otherwise.
+	 */
 	public boolean remove(Album album) {
 
 		int index = find(album);
@@ -81,7 +107,9 @@ public class Collection {
 	}
 
 
-	
+	/**
+	 * Prints the albums in the collection sorted by release date.
+	 */
 	public void printByRelease() {
 		if (numAlbums == 0)
 			System.out.println("Invalid Command!");
@@ -112,7 +140,10 @@ public class Collection {
 		}
 	}
 
-	
+
+	/**
+	 * Prints the albums in the collection sorted by genre.
+ 	 */
 	public void printByGenre() {
 		if (numAlbums == 0)
 			System.out.println("Invalid Command!");
@@ -140,7 +171,10 @@ public class Collection {
 			System.out.print("*End of list");
 		}
 	}
-	
+
+	/**
+	 * Prints the albums in the collection sorted by average rating and then by title.
+	 */
 	public void printByRating() {
 		for (int i = 0; i < size - 1; i++) { // Bubble sort by average rating, then title
 			for (int j = 0; j < size - i - 1; j++) {
@@ -161,6 +195,10 @@ public class Collection {
 			System.out.print("*End of list");	
 	}
 
+	/**
+	 * Checks whether the collection is empty.
+	 * @return true if the collection is empty, false otherwise.
+	 */
 	public boolean isEmpty() {
 		if (numAlbums == 0) {
 			return true;
@@ -168,7 +206,11 @@ public class Collection {
 		
 		return false;
 	}
-	
+
+	/**
+	 * Retrieves the length of the albums array
+	 * @return The length of the albums array.
+	 */
 	public int length() {
 		if (albums == null) {
 			return 0;
@@ -176,7 +218,11 @@ public class Collection {
 		
 		 return albums.length;
 	}
-	
+
+	/**
+	 * Retrieves the array of albums in the collection.
+	 * @return An array containing the albums in the collection.
+	 */
 	public Album[] getAlbums() {
 		return albums;
 	}
